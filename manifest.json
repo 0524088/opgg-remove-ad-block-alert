@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "opgg-remove-ad-block-alert",
+    "description": "opgg 移除防廣告提醒視窗",
+    "version": "1.0.0",
+    "permissions": [
+        "activeTab",
+        "webRequest"
+    ],
+    "content_scripts": [{
+        "matches": [
+            "https://www.op.gg/*"
+        ],
+        "js": [
+            "Content.js"
+        ],
+        "run_at": "document_start"
+    }],
+    "web_accessible_resources": [{
+        "resources": [
+            "Injection.js"
+        ],
+        "matches": ["<all_urls>"]
+    }]
+}
